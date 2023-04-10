@@ -1,0 +1,50 @@
+{
+    "name": "opencodex/dalorm",
+    "description": "Provides ORM implementation on top of Shopware DAL",
+    "homepage": "https://github.com/opencodex/dalorm",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Bojan Rajh",
+        "email": "schtr4jh@schtr4jh.net"
+      }
+    ],
+    "require": {
+      "ext-json": "*",
+      "php": "^7.4"
+    },
+    "require-dev": {
+       "pckg-app/frontend-dev": "dev-master",
+       "shopware/core": ">=6.4 <6.5"
+    },
+    "autoload": {
+      "psr-0": {
+        "OpenCodeX\\DALORM": "src\\"
+      }
+    },
+    "scripts": {
+      "test": [
+        "true || vendor/bin/phpunit --help --stop-on-defect",
+        "true || vendor/bin/phpcloc cloc src/",
+        "vendor/bin/phpstan analyse src/ --level=9 || vendor/bin/phpstan analyse src/ --level=8",
+        "vendor/bin/phpcs --extensions=php --warning-severity=8 --error-severity=1 --standard=PSR12 --parallel=2 -p src/",
+        "vendor/bin/codecept run"
+      ],
+      "autofix": [
+        "vendor/bin/phpcs --extensions=php --report-diff=phpcs.diff --warning-severity=8 --error-severity=1 --standard=PSR12 --parallel=2 -p src/"
+      ],
+      "autopatch": [
+        "patch -p0 -ui phpcs.diff && rm phpcs.diff"
+      ]
+    },
+    "scripts-descriptions": {
+      "test": "Run all tests and quality checks"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": false
+        }
+    }
+}
