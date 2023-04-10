@@ -2,7 +2,7 @@
 
 namespace OpenCodeX\DALORM;
 
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\Context;
@@ -15,9 +15,9 @@ trait Collection
 {
     protected ?Criteria $criteria = null;
 
-    protected ?EntityRepositoryInterface $repository = null;
+    protected ?EntityRepository $repository = null;
 
-    public function setRepository(EntityRepositoryInterface $repository): static
+    public function setRepository(EntityRepository $repository): static
     {
         $this->repository = $repository;
 

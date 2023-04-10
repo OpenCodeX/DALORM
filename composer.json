@@ -11,11 +11,11 @@
     ],
     "require": {
       "ext-json": "*",
-      "php": "^7.4"
+      "php": "^8.1"
     },
     "require-dev": {
-       "pckg-app/frontend-dev": "dev-master",
-       "shopware/core": ">=6.4 <6.5"
+       "pckg-app/frontend-dev": "dev-next-8.0",
+       "shopware/core": ">=6.5 <6.6"
     },
     "autoload": {
       "psr-0": {

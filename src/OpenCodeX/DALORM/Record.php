@@ -6,15 +6,15 @@ use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\Uuid\Uuid;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 trait Record
 {
-    protected ?EntityRepositoryInterface $repository;
+    protected ?EntityRepository $repository;
     protected ?EntityManagerInterface $entityManager;
 
-    public function setRepository(EntityRepositoryInterface $repository): static
+    public function setRepository(EntityRepository $repository): static
     {
         $this->repository = $repository;
 
